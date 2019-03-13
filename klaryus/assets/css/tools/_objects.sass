@@ -1,0 +1,281 @@
+textarea,
+input
+    &[placeholder]
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &::-moz-placeholder
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &::-webkit-input-placeholder
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &:-ms-input-placeholder 
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+
+.flex  
+    display: -webkit-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex    
+
+.container
+    display: block
+    max-width: 1180px
+    margin: 0 auto
+    padding-left: 15px
+    padding-right: 15px
+
+#wrap
+    min-height: calc(100vh - 264px)
+    overflow: hidden
+    .main
+        z-index: 1
+
+.logo 
+    text-align: center
+    a 
+        display: inline-block
+    img,svg
+        display: block
+        height: auto
+        max-width: 100%
+        +mq(640px, max)
+            max-width: 200px
+
+.btn
+    +border(999px)
+    +rem('font-size', 22px)
+    padding: 10px 30px
+    text-align: center
+    &.btn-1
+        background-color: $blue 
+        color: white
+    &.btn-2
+        background-color: white 
+        color: $blue
+        padding: 6px 50px
+        text-transform: lowercase
+        +rem('font-size', 16px)
+
+.title
+    color: $blue
+    font-weight: bold    
+    +rem('font-size', 50px)
+    +mq('1060px', max)
+        +rem('font-size', 32px)
+
+section
+    .container
+        max-width: 980px
+        padding-top: 63px
+        padding-bottom: 63px
+        >.title
+            text-align: center
+            & + *:not(.text):not([class*='container'])
+                margin-top: 50px
+            & + .text
+                & + *
+                    margin-top: 50px
+        >.text
+            color: $gray
+            +rem('font-size', 35px)
+            +mq('1060px', max)
+                +rem('font-size', 16px)
+            text-align: center
+
+.grid
+    align-items: stretch
+    @extend .flex
+    flex-flow: row wrap 
+    justify-content: space-between
+    .grid-element
+        flex: 0 0 50%
+        +mq(1130px, max)
+            flex: 0 0 100%
+        padding-bottom: 30px
+        &:nth-child(2n+1)
+            padding-right: 30px
+            +mq(1130px, max)
+                padding-right: 0
+            .grid-label
+                left: -80px
+                +mq(1130px, max)
+                    left: 0
+        &:nth-child(2n+2)
+            padding-left: 30px
+            +mq(1130px, max)
+                padding-left: 0
+        &:hover
+            .grid-label
+                left: 30px
+                opacity: 0
+            .grid-inner
+                .grid-content
+                    opacity: 1   
+        .grid-label
+            align-items: center
+            background-color: $blue
+            color: white
+            @extend .flex
+            flex-flow: column wrap 
+            justify-content: center
+            height: 160px    
+            left: 0
+            +mq(1024px, max)
+                display: none
+            position: absolute   
+            +transition(500ms)
+            top: 30%
+            +mq(1130px, max)
+                bottom: 30px
+                left: initial
+                right: 0
+                top: initial
+            width: 160px     
+            z-index: 3       
+            .icon
+                filter: grayscale(0) contrast(2) invert(1)
+            .label
+                +rem('font-size', 18px)
+                margin-top: 15px
+                text-transform: uppercase   
+        .grid-inner
+            background-size: cover 
+            background-position: center center 
+            background-repeat: none
+            height: 430px
+            z-index: 2
+            &::after
+                background-color: rgba(0,0,0,.4)
+                content: ''
+                display: block 
+                height: 100%
+                left: 0
+                position: absolute 
+                top: 0
+                width: 100%
+                z-index: 1
+            .grid-content
+                align-items: flex-start
+                background-color: $blue
+                color: white
+                @extend .flex
+                flex-flow: column wrap 
+                padding: 45px
+                opacity: 0
+                +mq(1024px, max)
+                    opacity: 1
+                +transition(500ms)
+                justify-content: space-between
+                height: 100%
+                z-index: 2
+                >* 
+                    display: block
+                    &.title
+                        color: white
+                        +rem('font-size', 18px)
+                        text-transform: uppercase
+                    &.text
+                        flex: 1
+                        +rem('font-size', 16px)
+                    &.icon
+                        filter: grayscale(0) contrast(2) invert(1)
+                        margin: 10px 0 25px
+    &.grid-2
+        .grid-element
+            >.title
+                color: white
+                +mq(1024px, max)
+                    display: none
+                bottom: 28px
+                display: block
+                font-weight: bold
+                +rem('font-size', 24px)
+                padding: 25px
+                left: 0
+                position: absolute
+                width: 100%    
+                z-index: 2
+            &:hover
+                >.title
+                    z-index: 1                    
+            &:nth-child(2n+1)
+                padding-right: 0
+            &:nth-child(2n+2)
+                >.title
+                    left: 25px
+                    width: calc(100% - 30px)
+                    +mq(1130px, max)
+                        left: 0
+                        width: 100%
+            .grid-inner
+                height: 390px
+                .grid-content
+                    padding-top: 60px
+                    padding-bottom: 60px
+                    +mq(414px, max)
+                        padding-left: 15px
+                        padding-right: 15px
+                        padding-top: 15px
+                        padding-bottom: 15px
+                    >.title
+                        flex: 1
+                        +mq(414px, max)
+                            flex: 0 0 auto
+                    >.text
+                        flex: 0 0 auto
+                        padding-bottom: 30px
+                &::after
+                    background-color: rgba(0,0,0,.7)
+            .grid-label
+                display: block
+                +mq(1024px, max)
+                    display: none
+                height: auto
+                left: initial !important
+                padding-left: 65px
+                padding-right: 40px
+                padding-top: 15px
+                padding-bottom: 15px
+                right: 0
+                top: 0
+                +mq(1130px, max)
+                    bottom: initial
+                    position: absolute
+                    left: initial 
+                    right: 0 
+                    top: 0
+                width: auto
+                .label
+                    margin-top: 0        
+
+.lds-ripple 
+    display: inline-block
+    position: relative
+    width: 64px
+    height: 64px
+    div 
+        position: absolute
+        border: 4px solid #fff
+        opacity: 1
+        border-radius: 50%
+        animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite
+        &:nth-child(2) 
+            animation-delay: -0.5s
+
+.spinner
+    position: fixed
+    display: none
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    justify-content: center
+    align-items: center
+    background: rgba(0,0,0,.2)
+    z-index: 10    

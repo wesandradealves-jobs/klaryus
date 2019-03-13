@@ -1,0 +1,126 @@
+.distribuidores
+    .title
+        text-align: center!important
+        text-transform: capitalize
+    &-navigation
+        > ul 
+            align-items: center
+            @extend .flex
+            flex-flow: row wrap 
+            +mq(568px, max)
+                flex-flow: column wrap 
+            justify-content: center
+            > li 
+                +mq(568px, max)
+                    &:not(:last-child)
+                        margin-bottom: 15px
+                    padding: 0 !important
+                    width: 100%
+                &:first-child
+                    padding-right: 40px
+                    +mq(680px, max)
+                        padding-right: 15px
+                &:last-child
+                    padding-left: 40px
+                    +mq(680px, max)
+                        padding-left: 15px
+                .btn 
+                    display: block
+                    width: 270px
+                    +mq(680px, max)
+                        width: auto
+                        +mq(568px, max)
+                            +rem('font-size', 14px)
+                            +mq(369px, max)
+                                width: 100%
+.contato
+    border-bottom: 1px lightgray solid
+    >.container
+        padding-bottom: 0
+    .contact
+        &-form 
+            .btn 
+                display: block
+                width: 270px        
+                +mq(568px, max)
+                    width: 100%    
+            .title
+                font-weight: bold
+                +rem('font-size', 35px)
+                max-width: 100%
+                text-transform: capitalize
+                +mq(568px, max)
+                    text-align: center !important
+            .contact-tab-content
+                align-items: stretch
+                @extend .flex
+                flex-flow: row wrap 
+                justify-content: space-between
+                margin-top: 50px
+                > span 
+                    margin-bottom: 20px
+                    &.empresa-field
+                        display: none
+                    &.mid-input
+                        flex: 0 0 50%
+                        +mq(568px, max)
+                            flex: 0 0 100% 
+                        &:nth-child(2n + 1)
+                            padding-right: 15px
+                            +mq(568px, max)
+                                padding-right: 0
+                        &:nth-child(2n + 2)
+                            padding-left: 15px
+                            +mq(568px, max)
+                                padding-left: 0
+                        > *:not(.btn):not([type='submit'])
+                            border: 1px lightgray solid
+                            display: block 
+                            padding: 20px 30px      
+                            width: 100%                      
+                    &:not(.mid-input)
+                        border: 1px lightgray solid
+                        padding: 20px 30px
+                        flex: 0 0 100%
+                    input, textarea, select
+                        color: gray
+                        display: block 
+                        +rem('font-size', 15px)
+                        text-transform: uppercase
+                        width: 100%
+                    textarea
+                        height: 230px
+                        overflow: hidden
+                        resize: none
+        &-tabs 
+            border-top: 1px lightgray dashed
+            &-navigation
+                display: block
+                >ul
+                    border-bottom: 1px lightgray dashed 
+                    display: block 
+                    +rem('font-size', 18px)
+                    +mq(568px, max)
+                        +rem('font-size', 12px)
+                    padding: 45px 0
+                    text-align: center 
+                    width: 100%
+                    >li
+                        color: gray
+                        display: inline-block
+                        text-transform: uppercase
+                        padding-top: 15px
+                        padding-bottom: 15px
+                        vertical-align: middle 
+                        &.active
+                            color: black
+                            font-weight: bold
+                        &:first-child
+                            border-right: 1px lightgray solid 
+                            padding-right: 90px
+                            +mq(680px, max)
+                                padding-right: 30px
+                            & + li 
+                                padding-left: 90px
+                                +mq(680px, max)
+                                    padding-left: 30px

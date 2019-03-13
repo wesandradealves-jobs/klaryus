@@ -1,0 +1,194 @@
+.produtos
+    &-popup
+        background-color: rgba(255,255,255,.7)
+        align-items: center
+        display: none 
+        +mq(790px, max)
+            padding: 30px
+        &.toggle
+            @extend .flex
+        flex-flow: column wrap 
+        height: 100vh
+        justify-content: center 
+        left: 0
+        position: absolute 
+        top: 0
+        width: 100%
+        z-index: 100
+        .popupnav
+            background-color: transparent 
+            color: gray 
+            cursor: pointer
+            display: block 
+            +rem('font-size', 75px)
+            left: 0
+            padding: 0 15px
+            position: absolute 
+            top: calc(50% - 75px/2)
+            &[class*='next']
+                left: initial
+                right: 0
+        .popup-close
+            color: gray
+            display: block
+            margin: 15px 20px
+            position: absolute 
+            right: 0
+            top: 0
+            +rem('font-size', 42px)
+        &-inner 
+            align-items: stretch
+            background-color: white
+            box-shadow: 0 0 20px -3px #888
+            @extend .flex
+            flex-flow: row wrap 
+            justify-content: space-between
+            max-width: 1024px
+            +mq(1060px, max)
+                max-width: 768px
+            padding: 80px
+            +mq(790px, max)
+                padding: 80px 30px
+            .info
+                flex: 1
+                padding-left: 80px
+                +mq(790px, max)
+                    padding-left: 0
+                .title
+                    color: $blue
+                    font-family: 'Ubuntu', sans-serif
+                    +rem('font-size', 36px)
+                    +mq(1060px, max)
+                        +rem('font-size', 19px)
+                    line-height: 1
+                    margin-bottom: 30px
+                    text-transform: uppercase
+                .text
+                    color: gray
+                    +mq(814px, max)
+                        max-height: 140px
+                        overflow: auto                        
+                    +rem('font-size', 22px)
+                    +mq(1060px, max)
+                        +rem('font-size', 15px)
+                    strong, b 
+                        font-weight: bold 
+                    i 
+                        font-style: italic
+                    p 
+                        display: block 
+                        &:not(:last-of-type)
+                            margin-bottom: 15px
+            .thumbnail
+                background-size: initial 
+                background-repeat: no-repeat
+                background-position: center center     
+                flex: 0 0 auto            
+                margin-top: -160px
+                +mq(790px, max)
+                    background-size: contain
+                    height: 350px
+                    margin: 0
+                    +mq(814px, max)
+                        height: 190px
+                        +mq(568px, max)
+                            display: none
+                height: 545px
+                width: 220px
+.pg-produtos
+    .main
+        background: url(assets/img/pattern.png) 0 0 repeat white
+        .produtos
+            &-list 
+                align-items: stretch
+                @extend .flex
+                flex-flow: row wrap 
+                justify-content: center
+                >li 
+                    cursor: pointer
+                    flex: 0 0 auto 
+                    margin-bottom: 60px
+                    width: 25%
+                    +mq(890px, max)
+                        width: 33.333%
+                        +mq(767px, max)
+                            width: 50%
+                            +mq(640px, max)
+                                width: 100%
+                    &:not(:nth-child(4n+4)):not(:last-child)
+                        >div 
+                            border-right: 1px lightgray solid
+                            +mq(890px, max)
+                                border-right: 0
+                            display: block
+                            height: 100%
+                    .thumbnail
+                        background-size: contain 
+                        background-repeat: no-repeat
+                        background-position: center center
+                        display: block
+                        height: 215px
+                        margin: 0 auto 15px
+                        width: 100%
+                    .title 
+                        color: black 
+                        +rem('font-size', 15px)
+                        text-align: center !important
+                        text-transform: uppercase
+            &-result
+                .container
+                    >.title
+                        font-weight: bold
+                        +rem('font-size', 35px)
+                        max-width: 100%
+                        text-align: center !important
+                        text-transform: capitalize
+            &-navigation
+                border-top: 1px lightgray solid
+                border-bottom: 1px lightgray solid
+                margin: 80px auto 
+                padding: 40px 0 30px
+                >ul 
+                    align-items: flex-end
+                    @extend .flex
+                    flex-flow: row-reverse wrap
+                    justify-content: space-around 
+                    +mq(690px, max)
+                        align-items: center
+                        flex-flow: column wrap 
+                        justify-content: center 
+                    >li 
+                        cursor: pointer
+                        position: relative
+                        text-align: center
+                        &[data-disable='true']
+                            cursor: default
+                            pointer-events: none 
+                            img, span 
+                                opacity: .3
+                        +mq(690px, max)
+                            &:not(:last-child)
+                                margin-bottom: 80px
+                            width: 90px
+                        .ribbon
+                            @extend .btn
+                            background-color: $coral
+                            color: white
+                            +rem('font-size', 12px)
+                            margin: -15px -30px
+                            +mq(690px, max)
+                                +rem('font-size', 7px)
+                                margin: -15px 0
+                            padding: 3px 15px
+                            position: absolute
+                            right: 0
+                            text-transform: uppercase
+                            top: 0 
+                            z-index: 2
+                        img 
+                            margin-bottom: 14px
+                        span 
+                            +rem('font-size', 15px)
+                            text-transform: uppercase 
+                        img, span 
+                            display: block

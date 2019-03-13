@@ -1,0 +1,77 @@
+.pg-interna
+    .main
+        padding-bottom: 65px
+        @for $i from 1 through 5
+            h#{$i}    
+                @extend .title
+                color: $lightenblue
+                font-weight: 300
+                +rem('font-size', 45px)
+                margin-bottom: 15px
+                margin: 0 auto
+                text-align: left!important
+        h2.title 
+            +mq(814px, max)
+                +rem('font-size', 30px)
+    section
+        &.webdoor
+            background-size: cover 
+            background-repeat: no-repeat
+            background-position: center center
+            padding: 0 0 16%
+            +mq(814px, max)
+                padding: 0 0 32%
+        .container
+            .container-inner
+                color: $gray
+                >div 
+                    color: inherit
+                    margin: 0 auto 30px
+                    img 
+                        display: block
+                        height: auto 
+                        width: 100%
+    &.pg-single
+        @for $i from 1 through 5
+            h#{$i}    
+                max-width: inherit                
+        .content
+            .container
+                max-width: 1024px
+                &-inner
+                    p
+                        max-width: inherit
+                >.title
+                    word-break: break-all
+                    .excerpt
+                        display: block
+                        color: black
+                        +rem('font-size', 19px)
+                    .date
+                        display: block
+                        +rem('font-size', 17px)
+                        margin-bottom: 65px  
+                        margin-top: 15px      
+                        text-align: right                     
+.mobile-navigation
+    align-items: center
+    background-color: transparentize($blue, .3)
+    // @extend .flex
+    display: none 
+    &.toggle
+        @extend  .flex
+    flex-flow: column wrap 
+    height: 100vh
+    justify-content: center
+    left: 0 
+    position: absolute
+    top: 0
+    width: 100%
+    z-index: 100
+    >ul 
+        >li 
+            color: white 
+            display: block
+            +rem('font-size', 15px)
+            line-height: 3 
+            text-align: center 

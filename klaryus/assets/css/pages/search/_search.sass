@@ -1,0 +1,30 @@
+.no-results
+    display: block
+    padding-top: 35px
+    text-align: center 
+    width: 100%
+.search-results
+    display: block 
+    +rem('font-size', 22px)
+    margin-bottom: 35px
+    text-align: center
+    width: 100%
+    b,strong
+        font-weight: bold
+.pagination
+    align-items: center
+    @extend .flex
+    flex-flow: row wrap 
+    justify-content: center 
+    >* 
+        background-color: whitesmoke
+        +border(2px)
+        margin: 0 7.5px
+        pointer-events: pointer
+        padding: 7px 15px
+        &.current,
+        &:hover
+            background-color: $blue
+            color: white
+        &.current
+            pointer-events: none

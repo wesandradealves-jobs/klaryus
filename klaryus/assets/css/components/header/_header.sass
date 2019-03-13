@@ -1,0 +1,90 @@
+.header
+    left: 0
+    margin-bottom: -65px
+    top: 0
+    width: 100%
+    z-index: 30
+    +mq(640px, max)
+        margin-bottom: -30px
+    &.-sticky
+        background-color: white
+        position: fixed
+        top: -300px
+        z-index: 40
+        +transition(300ms)
+        .logo
+            margin-bottom: -50px
+        .navigation,
+        .social-networks
+            margin-top: 0
+        &.-stuck
+            +mq(1024px, min)
+                top: 0
+                .logo
+                    width: 200px
+    .container
+        align-items: center
+        @extend .flex
+        flex-flow: row wrap 
+        justify-content: space-between
+    .logo
+        transition: width 300ms
+        width: 280px
+        +mq(490px, max)
+            width: 200px
+    .social-networks
+        color: $blue
+        +mq(490px, max)
+            display: none
+        margin-top: -5%
+        ul 
+            text-align: right
+            > li 
+                display: inline-block 
+                +rem('font-size', 22px)
+                +mq('1060px', max)
+                    +rem('font-size', 16px)
+                vertical-align: middle 
+                &:not(:last-child)
+                    margin-right: 18px
+                    +mq(880px, max)
+                        margin-right: 10px
+    .navigation
+        color: $blue
+        +mq(880px, max)
+            flex: 1
+        margin-top: -5%
+        &:not(.footer-navigation)
+            ul 
+                > li 
+                    &:last-child
+                        display: none        
+        ul 
+            align-items: center
+            @extend .flex
+            flex-flow: row wrap 
+            justify-content: center 
+            +mq(880px, max)
+                flex: 1
+                justify-content: flex-end
+                padding-right: 30px
+                +mq(370px, max)
+                    padding-right: 0
+            > li 
+                padding: 0 15px
+                +mq('1060px', max)
+                    padding: 0 10px
+                    +mq(880px, max)
+                        padding: 0 6px
+                        &:not(:last-child)
+                            display: none !important
+                        &:last-child
+                            display: block !important
+                &:hover,
+                &[class*="current"]
+                    font-weight: bold
+                > a 
+                    +rem('font-size', 18px)
+                    +mq('1060px', max)
+                        +rem('font-size', 14px)
+                    text-transform: uppercase

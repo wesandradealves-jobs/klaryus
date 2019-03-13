@@ -1,0 +1,33 @@
+.footer
+    @extend .header
+    background-color: $lightenblue
+    color: white
+    margin-bottom: 0
+    .container
+        +mq(940px, max)
+            justify-content: center
+        >.navigation,
+        >.social-networks
+            color: inherit
+            +mq(940px, max)
+                display: none
+            margin-top: 0
+    .logo
+        margin-top: -50px
+    .copyright
+        padding: 65px 15px
+        text-align: center 
+        .text,
+        &-navigation 
+            display: inline-block
+            vertical-align: baseline
+        .social-networks
+            color: white 
+            display: none 
+            +mq(940px, max)
+                display: block 
+            margin: 0
+            text-align: center 
+            >ul 
+                color: inherit
+                display: inline-block 
